@@ -1,4 +1,4 @@
-package Gestor_Tareas;
+package GestorDeTareas;
 public class Tarea {
      private String nombre;
 
