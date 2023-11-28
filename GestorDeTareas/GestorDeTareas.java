@@ -1,10 +1,14 @@
+package Gestor_Tareas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GestorDeTareas {
+
+public class Gestor_Tareas {
     private static ArrayList<Tarea> tareas = new ArrayList<>();
 
     public static void main(String[] args) {
+
+
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -74,5 +78,6 @@ public class GestorDeTareas {
     } else {
         System.out.println("No se encontró la tarea: " + nombreTarea);
     }
+}
     
 }
