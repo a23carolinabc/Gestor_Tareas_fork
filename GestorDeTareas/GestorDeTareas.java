@@ -19,7 +19,7 @@ public class Gestor_Tareas {
             System.out.print("Selecciona una opción: ");
 
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer del scanner
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
