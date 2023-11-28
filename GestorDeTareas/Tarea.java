@@ -1,3 +1,4 @@
+package Gestor_Tareas;
 public class Tarea {
      private String nombre;
 
