@@ -1,4 +1,4 @@
-package GestorDeTareas;
+package Gestor_Tareas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,14 +51,36 @@ public class Gestor_Tareas {
     }
 
     private static void agregarTarea(String nombreTarea) {
+        Scanner scanner = new Scanner(System.in);
+
         Tarea nuevaTarea = new Tarea(nombreTarea);
         tareas.add(nuevaTarea);
+
+        System.out.print("Seleccione la prioridad para la tarea (1. BAJA, 2. MEDIA, 3. ALTA): ");
+        int opcionPrioridad = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (opcionPrioridad) {
+            case 1:
+                nuevaTarea.setPrioridad(Prioridad.BAJA);
+                break;
+            case 2:
+                nuevaTarea.setPrioridad(Prioridad.MEDIA);
+                break;
+            case 3:
+                nuevaTarea.setPrioridad(Prioridad.ALTA);
+                break;
+            default:
+                System.out.println("Opción de prioridad no válida. Se establecerá como BAJA por defecto.");
+                nuevaTarea.setPrioridad(Prioridad.BAJA);
+                break;
+        }
     }
 
     private static void listarTareas() {
         System.out.println("Lista de Tareas:");
         for (Tarea tarea : tareas) {
-            System.out.println("- " + tarea.getNombre());
+            System.out.println("- " + tarea.getNombre() + " (Prioridad: " + tarea.getPrioridad() + ")");
         }
     }
 
@@ -78,6 +100,7 @@ public class Gestor_Tareas {
     } else {
         System.out.println("No se encontró la tarea: " + nombreTarea);
     }
+    
 }
     
 }
