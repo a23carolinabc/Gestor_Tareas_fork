@@ -1,4 +1,4 @@
-package Gestor_Tareas;
+package GestorDeTareas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
