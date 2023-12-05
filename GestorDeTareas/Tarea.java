@@ -1,39 +1,38 @@
-package Gestor_Tareas;
 
-import Gestor_Tareas.Tarea;
+import java.time.LocalDate;
+import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
 
 public class Tarea {
- 
-    private String nombre;
-    private Prioridad prioridad;
+    private String name;
+    private LocalDate fechaLimite;
 
-    // Constructor sin inicialización de prioridad
-    public Tarea(String nombre) {
-        this.nombre = nombre;
+    public Tarea (String name) {
+        this.name = name;
     }
 
-    // Constructor con inicialización de prioridad
-    public Tarea(String nombre, Prioridad prioridad) {
-        this.nombre = nombre;
-        this.prioridad = prioridad;
+    public String getName() {
+        return name;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Prioridad getPrioridad() {
-        return prioridad;
+    public void setFechaLimite(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la fecha límite de la tarea (en formato dd-MM-yyyy): ");
+        String fecha = scanner.nextLine();
+        fechaLimite = LocalDate.parse(fecha,DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
-    public void setPrioridad(Prioridad prioridad) {
-        this.prioridad = prioridad;
+    public String getFechaLimite() {
+        fechaLimite = LocalDate.of(2023, 12, 5);
+        DateTimeFormatter cambiada = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String fechaCambiada = fechaLimite.format(cambiada);
+        return fechaCambiada;
     }
-}
 
 
-enum Prioridad {
-    BAJA,
-    MEDIA,
-    ALTA
+   
 }
